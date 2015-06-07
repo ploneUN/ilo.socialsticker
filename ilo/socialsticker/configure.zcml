@@ -20,6 +20,12 @@
         name="ilo.socialsticker"
         directory="static"/>
 
-    <!-- -*- extra stuff goes here -*- -->
+<browser:viewlet
+    name="socialpost_viewlet"
+    manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+    class=".viewlet.socialpost_viewlet.socialpost_viewlet"
+    template="viewlet/templates/socialpost_viewlet.pt"
+    permission="zope2.View"
+    />
 
 </configure>

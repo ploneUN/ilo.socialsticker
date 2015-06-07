@@ -1,0 +1,13 @@
+<div class="state-sign">
+    <h3 class="widget_title">STATEMENT SIGNATORIES</h3>
+    <div class="textwidget" tal:define="contents viewlet/contents" tal:condition="contents">
+      
+        <tal:entry tal:repeat="content contents">
+            <p>
+                <img tal:attributes="src python: content.getPath() + '/images/sticker_image/thumb'"/>
+            </p>
+        </tal:entry>
+    </div>
+</div>
+
+
