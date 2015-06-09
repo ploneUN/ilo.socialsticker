@@ -1,13 +1,89 @@
+<script src="https://connect.facebook.net/en_US/all.js"></script>
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1022633591082915',
+      status     : true,
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+  }
+  
+  /*(function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+    '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());*/
+    
+
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script type="text/javascript">
+
+    
+    
+    $(document).ready(function(){
+      $('input#share_fb').click(function(){
+        var img_src= '';
+        var page_title = $('#page_title').html();
+        var link = $('#current_url').html();
+        var selected = $("input[type='radio']:checked");
+        var default_msg = '';
+        if (selected.length > 0) {
+          img_src = selected.siblings('img').attr('src');
+          default_msg = selected.siblings('span.sticker_default_msg').html();
+        }
+        var new_default_msg = prompt('Enter your message', default_msg);
+        FB.ui(
+          {
+          method: 'feed',
+          name: page_title,
+          redirect_uri: link,
+          link: link,
+          picture: img_src,
+          caption: new_default_msg,
+          description: "",
+          message: ''
+          },
+          function(response) {
+              if (response && response.post_id) {
+                  alert('Post was published.');
+              } else {
+                  alert('Post was not published.');
+              }
+          });
+      });
+    });
+</script>
+
+
 <div class="state-sign">
     <h3 class="widget_title">STATEMENT SIGNATORIES</h3>
-    <div class="textwidget" tal:define="contents viewlet/contents" tal:condition="contents">
-      
+    <span id="page_title" tal:content="context/Title" style="display:none"></span>
+    <span id="current_url" tal:content="context/absolute_url" style="display: none"></span>
+    <div class="textwidget" tal:define="contents view/contents" tal:condition="contents">
+        <form action=''>
         <tal:entry tal:repeat="content contents">
             <p>
-                <img tal:attributes="src python: content.getPath() + '/images/sticker_image/thumb'"/>
+                <input type='radio' tal:attributes="value content/UID" name='sticker'/>
+                <img tal:attributes="src python: content.getPath() + '/images/sticker_image/mini'"/>
+                <span class="sticker_default_msg" tal:content="python: content._unrestrictedGetObject().default_message" style="display: none"/>
             </p>
         </tal:entry>
+        </form>
     </div>
 </div>
+<input type='button' value='Share' id='share_fb' />
 
 
