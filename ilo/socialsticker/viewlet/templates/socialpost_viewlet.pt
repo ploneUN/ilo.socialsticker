@@ -41,7 +41,7 @@
         var selected = $("input[type='radio']:checked");
         var default_msg = '';
         if (selected.length > 0) {
-          img_src = selected.siblings('img').attr('src');
+          img_src = window.location.origin + selected.siblings('img').attr('src');
           alert(img_src);
           default_msg = selected.siblings('span.sticker_default_msg').html();
         }
