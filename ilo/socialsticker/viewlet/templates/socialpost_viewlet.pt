@@ -64,8 +64,29 @@
               }
           });
       });
+      
+      $("input[type='radio']").change(function(){
+        default_msg = $(this).siblings('span.sticker_default_msg').html();
+        twitter_href = $('a.twitter-share-button').attr('href');
+        twitter_href += '&text='+default_msg;
+        $('a.twitter-share-button').attr('href', twitter_href);
+        
+        
+      });
+      
+      
+      
+      
     });
 </script>
+
+<!--<script>-->
+<!--    !function(d,s,id){-->
+<!--        var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';-->
+<!--        if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);-->
+<!--        }-->
+<!--    }(document, 'script', 'twitter-wjs');-->
+<!--  </script>-->
 
 
 <div class="state-sign">
@@ -76,14 +97,29 @@
         <tal:entry tal:repeat="content contents">
             <p>
                 <input type='radio' tal:attributes="value content/UID" name='sticker'/>
-                <img tal:attributes="src python: content.getPath() + '/images/sticker_image/mini'"/>
+                <img tal:attributes="src python: content.getPath() + '/images/sticker_image/mini'" class='sticker-image'/>
                 <span class="sticker_default_msg" tal:content="python: content._unrestrictedGetObject().default_message" style="display: none"/>
             </p>
         </tal:entry>
         </form>
         <input type='button' value='Share' id='share_fb' />
+        <br/>
+        <!--<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-dnt="true">Tweet</a>-->
+        <!--<a href="https://twitter.com/intent/tweet?text=Hello%20World" class="twitter-share-button" data-size="large" data-dnt="true">Tweet</a>-->
+        <a tal:attributes="href string:https://twitter.com/intent/tweet?url=${context/absolute_url}" class="twitter-share-button" data-size="large" data-dnt="true" id="tweet-button" target="_blank">Tweet</a>
+        <!--<a class="twitter-share-button"
+           href="https://twitter.com/share"
+           data-size="large"
+           tal:attributes="data-url context/absolute_url"
+           data-text=""
+           target='iframe'
+           >Tweet</a>-->
+        
+        
+       
     </div>
 </div>
+
 
 
 
