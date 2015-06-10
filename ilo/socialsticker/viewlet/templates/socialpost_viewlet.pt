@@ -81,7 +81,7 @@
             </p>
         </tal:entry>
         </form>
-        <input class="share-icon share-facebook" type='button' value='Share' id='share_fb' />
+        <input type='button' value='Share' id='share_fb' />
     </div>
 </div>
 
