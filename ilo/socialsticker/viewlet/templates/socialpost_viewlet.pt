@@ -109,7 +109,7 @@
         <br/>
         <!--<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-dnt="true">Tweet</a>-->
         <!--<a href="https://twitter.com/intent/tweet?text=Hello%20World" class="twitter-share-button" data-size="large" data-dnt="true">Tweet</a>-->
-        <a class="share-icon share-twitter" tal:attributes="href string:https://twitter.com/intent/tweet?url=${context/absolute_url}" class="twitter-share-button" data-size="large" data-dnt="true" id="tweet-button" target="_blank">Tweet</a>
+        <a tal:attributes="href string:https://twitter.com/intent/tweet?url=${context/absolute_url}" class="twitter-share-button" data-size="large" data-dnt="true" id="tweet-button" target="_blank">Tweet</a>
         <!--<a class="twitter-share-button"
            href="https://twitter.com/share"
            data-size="large"
