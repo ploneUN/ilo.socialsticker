@@ -94,15 +94,16 @@
     <span id="current_url" tal:content="context/absolute_url" style="display: none"></span>
     <div class="textwidget" tal:define="contents view/contents" tal:condition="contents">
         <form action=''>
- <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6">
+<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6">
         <tal:entry tal:repeat="content contents">
 
-
+ 
             <li>
-<input class= type='radio' tal:attributes="value content/UID" name='sticker'/>
+                       <input type='radio' tal:attributes="value content/UID" name='sticker'/>
                 <img class="th" tal:attributes="src python: content.getPath() + '/images/sticker_image/mini'" class='sticker-image'/>
-                <span class="sticker_default_msg" tal:content="python: content._unrestrictedGetObject().default_message" style="display: none"/>
+                <span class="sticker_default_msg" tal:content="python: content._unrestrictedGetObject().default_message" style="display: none"/> 
                   </li>
+
         </tal:entry>
       </ul>
         </form>
