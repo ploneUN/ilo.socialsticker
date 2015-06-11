@@ -95,18 +95,23 @@
     <div class="textwidget" tal:define="contents view/contents" tal:condition="contents">
         <form action=''>
         <tal:entry tal:repeat="content contents">
-            <p>
-                <input type='radio' tal:attributes="value content/UID" name='sticker'/>
-                <img tal:attributes="src python: content.getPath() + '/images/sticker_image/mini'" class='sticker-image'/>
-                <span class="sticker_default_msg" tal:content="python: content._unrestrictedGetObject().default_message" style="display: none"/>
-            </p>
+
+ <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6">
+            <tal:element tal:define="brains python: view.selfies() " tal:repeat="brain brains" tal:condition="brains">
+                  <li>
+                       <input type='radio' tal:attributes="value content/UID" name='sticker'/>
+                <img class="th" tal:attributes="src python: content.getPath() + '/images/sticker_image/mini'" class='sticker-image'/>
+                <span class="sticker_default_msg" tal:content="python: content._unrestrictedGetObject().default_message" style="display: none"/> 
+                  </li>
+            </tal:element>
+      </ul>
         </tal:entry>
         </form>
         <input type='button' value='Share' id='share_fb' />
         <br/>
         <!--<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-dnt="true">Tweet</a>-->
         <!--<a href="https://twitter.com/intent/tweet?text=Hello%20World" class="twitter-share-button" data-size="large" data-dnt="true">Tweet</a>-->
-        <a tal:attributes="href string:https://twitter.com/intent/tweet?url=${context/absolute_url}" class="twitter-share-button" data-size="large" data-dnt="true" id="tweet-button" target="_blank">Tweet</a>
+        <a class="share-icon share-twitter" tal:attributes="href string:https://twitter.com/intent/tweet?url=${context/absolute_url}" class="twitter-share-button" data-size="large" data-dnt="true" id="tweet-button" target="_blank">Tweet</a>
         <!--<a class="twitter-share-button"
            href="https://twitter.com/share"
            data-size="large"
