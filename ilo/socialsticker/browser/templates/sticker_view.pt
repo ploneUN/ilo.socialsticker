@@ -36,7 +36,10 @@
         </div>
     </tal:block>
     <label>Image</label><br/>
-    <img class="th" tal:attributes="src python: context.absolute_url()+'/@@images/sticker_image/thumb'"/>
+
+<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6">
+            <li><img class="th" tal:attributes="src python: context.absolute_url()+'/@@images/sticker_image/thumb'"/></li>
+      </ul>
 
     <fieldset tal:repeat="group view/groups"
               tal:attributes="id python:''.join((group.prefix, 'groups.', group.__name__)).replace('.', '-')">
