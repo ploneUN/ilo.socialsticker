@@ -98,12 +98,12 @@
         <tal:entry tal:repeat="content contents">
 
 
-            <li>
-                       <input type='radio' tal:attributes="value content/UID" name='sticker'/>
+            <li><center> 
                 <img class="th" tal:attributes="src python: content.getPath() + '/images/sticker_image/mini'" class='sticker-image'/>
-                <span class="sticker_default_msg" tal:content="python: content._unrestrictedGetObject().default_message" style="display: none"/> 
+<input class= type='radio' tal:attributes="value content/UID" name='sticker'/>
+                <span class="sticker_default_msg" tal:content="python: content._unrestrictedGetObject().default_message" style="display: none"/>
+</center> 
                   </li>
-
         </tal:entry>
       </ul>
         </form>
