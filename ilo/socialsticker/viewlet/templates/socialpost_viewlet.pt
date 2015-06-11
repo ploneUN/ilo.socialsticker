@@ -94,13 +94,19 @@
     <span id="current_url" tal:content="context/absolute_url" style="display: none"></span>
     <div class="textwidget" tal:define="contents view/contents" tal:condition="contents">
         <form action=''>
+<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6">
         <tal:entry tal:repeat="content contents">
-            <p>
-                <input type='radio' tal:attributes="value content/UID" name='sticker'/>
-                <img tal:attributes="src python: content.getPath() + '/images/sticker_image/mini'" class='sticker-image'/>
-                <span class="sticker_default_msg" tal:content="python: content._unrestrictedGetObject().default_message" style="display: none"/>
-            </p>
+
+ 
+            <li>
+                       
+                <img class="th" tal:attributes="src python: content.getPath() + '/images/sticker_image/mini'" class='sticker-image'/>
+<input type='radio' tal:attributes="value content/UID" name='sticker'/>
+                <span class="sticker_default_msg" tal:content="python: content._unrestrictedGetObject().default_message" style="display: none"/> 
+                  </li>
+
         </tal:entry>
+      </ul>
         </form>
         <input type='button' value='Share' id='share_fb' />
         <br/>
