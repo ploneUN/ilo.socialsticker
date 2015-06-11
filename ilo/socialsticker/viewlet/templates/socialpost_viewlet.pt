@@ -109,11 +109,10 @@
         </tal:entry>
       </ul>
         </form>
-        <a href='#' id='share_fb'>Share</a>
-        <br/>
+        <a href='#' id='share_fb' class='button tiny'><i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Share</a>
         <!--<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-dnt="true">Tweet</a>-->
         <!--<a href="https://twitter.com/intent/tweet?text=Hello%20World" class="twitter-share-button" data-size="large" data-dnt="true">Tweet</a>-->
-        <a tal:attributes="href string:https://twitter.com/intent/tweet?url=${context/absolute_url}" class="twitter-share-button" data-size="large" data-dnt="true" id="tweet-button" target="_blank">Tweet</a>
+        <a tal:attributes="href string:https://twitter.com/intent/tweet?url=${context/absolute_url}" class="twitter-share-button button tiny" data-size="large" data-dnt="true" id="tweet-button" target="_blank"><i class="fa fa-twitter"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tweet</a>
         <!--<a class="twitter-share-button"
            href="https://twitter.com/share"
            data-size="large"
