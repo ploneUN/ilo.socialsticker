@@ -96,28 +96,7 @@
   
   
   
-  <ul class="large-block-grid-4">
-    <li>
-      <a href="#" data-reveal-id="fbModal">
-        <img src="/++theme++idwfed.theme/pd_img/share_fb.png" />
-      </a>
-    </li>
-    <li>
-      <a href="#" data-reveal-id="tweetModal">
-        <img src="/++theme++idwfed.theme/pd_img/share_tw.png" />
-      </a>
-    </li>
-    <li>
-      <a href="#" data-reveal-id="instaModal">
-        <img src="/++theme++idwfed.theme/pd_img/share_in.png" />
-      </a>
-    </li>
-    <li>
-      <a href="#" data-reveal-id="emailModal">
-        <img src="/++theme++idwfed.theme/pd_img/share_email.png" />
-      </a>
-    </li>
-  </ul>
+
 
   <!--fb modal-->
   <div id="fbModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
