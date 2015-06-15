@@ -159,11 +159,11 @@
   </div>
   
   <!--email modal-->
-  <div id="emailModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-    
-    
-    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-  </div>
+  <!--<div id="emailModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">-->
+  <!--  -->
+  <!--  -->
+  <!--  <a class="close-reveal-modal" aria-label="Close">&#215;</a>-->
+  <!--</div>-->
   
   
   
