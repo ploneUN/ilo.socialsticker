@@ -107,8 +107,11 @@
             <li>       
               <img class="th" tal:attributes="src python: content.getPath() + '/images/sticker_image/mini'" class='sticker-image'/>
               <p></p>
-              <p class="text-center"><input type='radio' tal:attributes="value content/UID" name='sticker'/></p>
-              <span class="sticker_default_msg" tal:content="python: content._unrestrictedGetObject().default_message" style="display: none"/> 
+              <p class="text-center">
+                <input type='radio' tal:attributes="value content/UID" name='sticker'/>
+                <span class="sticker_default_msg" tal:content="python: content._unrestrictedGetObject().default_message" style="display: none"/> 
+              </p>
+              
             </li>
           </tal:entry>
         </ul>
