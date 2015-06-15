@@ -28,7 +28,8 @@ from Products.CMFCore.utils import getToolByName
 from plone.i18n.normalizer import idnormalizer
 
 from ilo.socialsticker import MessageFactory as _
-
+from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
+   
 
 # Interface class; used to define content-type schema.
 
@@ -80,6 +81,10 @@ def _createObject(context, event):
     parent.manage_renameObject(id, new_id )
     new_title = title
     context.setTitle(context.title)
+
+
+    behavior = IExcludeFromNavigation(context)
+    behavior.exclude_from_nav = True
 
     context.reindexObject()
     return
