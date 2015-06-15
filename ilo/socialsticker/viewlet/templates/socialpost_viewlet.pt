@@ -116,8 +116,9 @@
           </tal:entry>
         </ul>
       </form>
-      <a href='#' id='share_fb' class='button tiny'><i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Share</a>
+      
     </div>
+    <a href='#' id='share_fb' class='button tiny'><i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Share</a>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
   
@@ -136,8 +137,9 @@
           </tal:entry>
         </ul>
       </form>
-      <a tal:attributes="href string:https://twitter.com/intent/tweet?url=${context/absolute_url}" class="twitter-share-button button tiny" data-size="large" data-dnt="true" id="tweet-button" target="_blank"><i class="fa fa-twitter"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tweet</a>
+      
     </div>
+    <a tal:attributes="href string:https://twitter.com/intent/tweet?url=${context/absolute_url}" class="twitter-share-button button tiny" data-size="large" data-dnt="true" id="tweet-button" target="_blank"><i class="fa fa-twitter"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tweet</a>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
   
