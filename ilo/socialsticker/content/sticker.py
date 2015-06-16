@@ -24,6 +24,7 @@ from plone.formwidget.contenttree import ObjPathSourceBinder
 from collective import dexteritytextindexer
 
 from zope.app.container.interfaces import IObjectAddedEvent
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from plone.i18n.normalizer import idnormalizer
 
@@ -88,3 +89,13 @@ def _createObject(context, event):
 
     context.reindexObject()
     return
+
+class StickerAddForm(dexterity.AddForm):
+    grok.name('ilo.pledge.pledge')
+    template = ViewPageTemplateFile('templates/stickeraddform.pt')
+    form.wrap(False)
+    
+
+class StickerEditForm(dexterity.EditForm):
+    grok.context(IPledge)
+    template = ViewPageTemplateFile('templates/stickereditform.pt')
