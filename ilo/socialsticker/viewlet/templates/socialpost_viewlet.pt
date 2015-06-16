@@ -63,7 +63,7 @@
           picture: img_src,
           caption: new_default_msg,
           description: "",
-          message: ''
+          message: new_default_msg
           },
           function(response) {
               if (response && response.post_id) {
