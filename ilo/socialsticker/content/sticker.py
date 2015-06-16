@@ -91,11 +91,11 @@ def _createObject(context, event):
     return
 
 class StickerAddForm(dexterity.AddForm):
-    grok.name('ilo.pledge.pledge')
+    grok.name('ilo.socialsticker.sticker')
     template = ViewPageTemplateFile('templates/stickeraddform.pt')
     form.wrap(False)
     
 
 class StickerEditForm(dexterity.EditForm):
-    grok.context(IPledge)
+    grok.context(ISticker)
     template = ViewPageTemplateFile('templates/stickereditform.pt')
