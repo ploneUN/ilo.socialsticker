@@ -3,7 +3,8 @@
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '1022633591082915',
+      //appId      : '1022633591082915',  tempura
+      appId      : '782040625249051',
       status     : true,
       cookie     : true,
       xfbml      : true,
