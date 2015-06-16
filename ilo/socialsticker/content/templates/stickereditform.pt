@@ -9,24 +9,6 @@
     <head>
         <metal:block fill-slot="column_two_slot" />
     </head>
- 
-<metal:styleslot fill-slot='style_slot'>
-      <style type="text/css" media="all">
-     .discreet{display:none;}
-    .horizontal {padding-bottom: 23px;}
-    #pledge-logo{
-      width: 200px;
-      height: 200px;
-      margin: 0 0 20px 20px;
-      }
-    #pledge-logo img{
-      border-radius: 10px;
-    }
-    .pledge-form .field{
-      clear: none;
-    }
-      </style>  
-</metal:styleslot>
 <body>
 
 <metal:main fill-slot="main">
