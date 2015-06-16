@@ -48,6 +48,12 @@
         }
         
         var new_default_msg = prompt('Enter your message', default_msg);
+        if (new_default_msg) {
+          new_default_msg += " #domesticworkersday #myfairhome";
+        }else{
+          new_default_msg = "#domesticworkersday #myfairhome";
+        }
+        
         FB.ui(
           {
           method: 'feed',
