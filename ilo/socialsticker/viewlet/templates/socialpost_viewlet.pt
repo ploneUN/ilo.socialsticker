@@ -42,9 +42,10 @@
         var selected = $("input[type='radio']:checked");
         var default_msg = '';
         if (selected.length > 0) {
-          img_src = window.location.origin + selected.siblings('img').attr('src');
+          img_src = selected.parent().siblings('img').attr('src');
           default_msg = selected.siblings('span.sticker_default_msg').html();
         }
+        
         var new_default_msg = prompt('Enter your message', default_msg);
         FB.ui(
           {
