@@ -2,4 +2,9 @@
 <layers>
     <layer name="ilo.socialsticker"
         interface="ilo.socialsticker.interfaces.IProductSpecific" />
+
+     <layer name="ilo.socialsticker"
+        interface="ilo.socialsticker.interfaces.IFacebookLayer" />
 </layers>
+
+

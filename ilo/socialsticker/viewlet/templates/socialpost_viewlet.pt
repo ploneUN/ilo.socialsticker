@@ -4,14 +4,15 @@
   window.fbAsyncInit = function() {
     FB.init({
       //appId      : '1022633591082915',  tempura
-      appId      : '112912282377538',
+      //appId      : '112912282377538', client site
+      appId      : document.getElementById('facebook_id').innerHTML, 
       status     : true,
       cookie     : true,
       xfbml      : true,
       version    : 'v2.3'
     });
   }
-  
+  alert(document.getElementById('facebook_id').innerHTML);
   /*(function() {
     var e = document.createElement('script'); e.async = true;
     e.src = document.location.protocol +
@@ -32,8 +33,6 @@
 
 <script type="text/javascript">
 
-    
-    
     $(document).ready(function(){
       $('a#share_fb').click(function(e){
         e.preventDefault()
@@ -99,12 +98,9 @@
 
 
 <div class="state-sign">
+  <span style="display: none" id="facebook_id" tal:content="view/facebook"></span>
   <span id="page_title" tal:content="context/Title" style="display:none"></span>
   <span id="current_url" tal:content="context/absolute_url" style="display: none"></span>
-  
-  
-  
-
 
   <!--fb modal-->
   <div id="fbModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">

@@ -5,6 +5,8 @@ from Products.CMFCore.utils import getToolByName
 #from ilo.pledge.content.pledge import IPledge
 from plone.app.layout.viewlets import common as base
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 
 #grok.templatedir('templates')
 
@@ -27,9 +29,11 @@ class socialpost_viewlet(base.ViewletBase):
         catalog = self.catalog
         path = '/'.join(context.aq_parent.getPhysicalPath())
         brains = catalog.unrestrictedSearchResults(path={'query': path, 'depth' : 1}, portal_type='ilo.socialsticker.sticker',review_state='published')
-        
         return brains
 
-
+    def facebook(self):
+        registry = getUtility(IRegistry)
+        facebook_id = registry.get('ilo.socialsticker.controlpanel.IFacebookSettings.fb_app_id').encode()
+        return facebook_id
 
 

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<object
+    name="portal_controlpanel"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+    <configlet
+        title="Facebook Settings"
+        action_id="ilo.socialsticker.settings"
+        appId="ilo.socialsticker"
+        category="Products"
+        condition_expr=""
+        url_expr="string:${portal_url}/@@facebook-controlpanel"
+        visible="True"
+        i18n:attributes="title">
+            <permission>Manage portal</permission>
+    </configlet>
+
+</object>
