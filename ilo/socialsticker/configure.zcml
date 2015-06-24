@@ -28,4 +28,11 @@
     permission="zope2.View"
     />
 
+    <browser:page
+    name="facebook-controlpanel"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    permission="cmf.ManagePortal"
+    class=".controlpanel.FacebookControlPanelView"
+    />
+
 </configure>

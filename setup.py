@@ -34,6 +34,9 @@ setup(name='ilo.socialsticker',
 #          'plone.app.multilingual',
 #          'plone.multilingualbehavior',
           'plone.app.versioningbehavior',
+          'collective.fbshare',
+          'plone.app.registry',
+         
           # -*- Extra requirements: -*-
       ],
       extras_require={

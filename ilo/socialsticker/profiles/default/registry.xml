@@ -1,0 +1,3 @@
+<registry>    
+    <records interface="ilo.socialsticker.controlpanel.IFacebookSettings" />
+</registry>
