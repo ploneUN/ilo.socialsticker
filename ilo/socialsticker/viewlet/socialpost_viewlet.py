@@ -33,7 +33,10 @@ class socialpost_viewlet(base.ViewletBase):
 
     def facebook(self):
         registry = getUtility(IRegistry)
-        facebook_id = registry.get('ilo.socialsticker.controlpanel.IFacebookSettings.fb_app_id').encode()
+        field = 'ilo.socialsticker.controlpanel.IFacebookSettings.fb_app_id'
+        facebook_id = ''
+        if registry.get(field):
+            facebook_id = registry.get(field).encode()
         return facebook_id
 
 
